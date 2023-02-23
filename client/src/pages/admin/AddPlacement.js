@@ -122,7 +122,7 @@ const AddPlacement = () => {
         <h4>Criteria Form:</h4>
         <Typography>pick the candidates who can aply</Typography>
         <FormGroup>
-          {["CMPN", "INFT", "ETRX", "EXTC", "BIOM"].map((branch, i) => (
+          {["BSC IT", "BSC BT", "BSC", "BCOM", "BA"].map((branch, i) => (
             <FormControlLabel
               control={<Checkbox />}
               label={branch}

@@ -39,9 +39,9 @@ const columns = [
     width: 300,
   },
   { field: "branch", headerName: "Branch", width: 200 },
-  { field: "engineering_division", headerName: "Division", width: 130 },
-  { field: "engineeringAggrpercent", headerName: "Aggr CGPA", width: 150 },
-  { field: "engineeringpercent", headerName: "Eng Aggr %", width: 170 },
+  { field: "division", headerName: "Division", width: 130 },
+  { field: "Aggrpercent", headerName: "Aggr CGPA", width: 150 },
+  { field: "percent", headerName: "Aggr %", width: 170 },
   {
     field: "placed",
     headerName: "Status",

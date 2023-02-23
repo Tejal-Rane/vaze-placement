@@ -9,7 +9,7 @@ export const sendMailNotification = async (req, res) => {
   var mailOptions = {
     from: process.env.MAIL_USERNAME,
     to: req.body.emailarray,
-    subject: "TPO cell vidyalankar",
+    subject: "TPO cell Vaze",
     template: "email",
     context: {
       company: req.body.formData.companyName,

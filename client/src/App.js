@@ -21,6 +21,8 @@ import Home from "./comment-section/Home";
 import Viewdrive from "./pages/student/Viewdrive";
 import MainPage from "./pages/MainPage";
 import About from "./pages/AboutUs";
+import Navbar from "./pages/Navbar";
+import Contact from "./pages/Contact";
 const App = () => {
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.alert);
@@ -39,29 +41,40 @@ const App = () => {
   if (!loading) {
     return (
       <>
-        <Layout></Layout>
+       
 
         <Routes>
         <Route
             path="/"
             element={
               <PublicRoute>
+              <Navbar/>
                 <MainPage/>
               </PublicRoute>
             }
           />
+          <Route
+            path="/contact"
+            element={
+              <PublicRoute><Layout/>
+                <Contact/>
+              </PublicRoute>
+            }/>
             <Route
             path="/login"
             element={
               <PublicRoute>
+              <Navbar/>
                 <Login/>
               </PublicRoute>
             }
           />
+          
            <Route
             path="/about"
             element={
               <PublicRoute>
+              <Navbar/>
                 <About/>
               </PublicRoute>
             }
@@ -72,13 +85,14 @@ const App = () => {
             path="/admin/add-student"
             element={
               <AdminRoute>
+              <Layout/>
                 <AddStudent />
               </AdminRoute>
             }
           />
           <Route path="/view-drive/:id"
           element={
-            <PrivateRoute>
+            <PrivateRoute><Layout/>
               <Viewdrive/>
             </PrivateRoute>
           }/>
@@ -86,7 +100,7 @@ const App = () => {
           <Route
             path="/admin/all-students"
             element={
-              <AdminRoute>
+              <AdminRoute><Layout/>
                 <AllStudentsTable />
               </AdminRoute>
             }
@@ -94,15 +108,16 @@ const App = () => {
           <Route
             path="/admin/add-notice/"
             element={
-              <AdminRoute>
+              <AdminRoute><Layout/>
                 <AddNotice />
               </AdminRoute>
             }
+            
           />
           <Route
             path="/admin/add-drive/"
             element={
-              <AdminRoute>
+              <AdminRoute><Layout/>
                 <AddPlacement />
               </AdminRoute>
             }
@@ -110,7 +125,7 @@ const App = () => {
           <Route
             path="/dashboard"
             element={
-              <PrivateRoute>
+              <PrivateRoute><Layout/>
                 <Dashboard />
               </PrivateRoute>
             }
@@ -118,7 +133,7 @@ const App = () => {
           <Route
             path="/student/all-drives"
             element={
-              <PrivateRoute>
+              <PrivateRoute><Layout/>
                 <AllDrivesTable />
               </PrivateRoute>
             }
@@ -126,7 +141,7 @@ const App = () => {
           <Route
             path="/student/view-profile/:id"
             element={
-              <PrivateRoute>
+              <PrivateRoute><Layout/>
                 <ViewProfile />
               </PrivateRoute>
             }
@@ -134,7 +149,7 @@ const App = () => {
           <Route
             path="/chat-forum"
             element={
-              <PrivateRoute>
+              <PrivateRoute><Layout/>
                 <Home />
               </PrivateRoute>
             }
@@ -142,7 +157,7 @@ const App = () => {
           <Route
             path="/create-profile"
             element={
-              <PrivateRoute>
+              <PrivateRoute><Layout/>
                 <CreateProfile />
               </PrivateRoute>
             }
@@ -150,7 +165,7 @@ const App = () => {
           <Route
             path="/student/update-profile/:id"
             element={
-              <PrivateRoute>
+              <PrivateRoute><Layout/>
                 <CreateProfile />
               </PrivateRoute>
             }

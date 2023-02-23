@@ -47,16 +47,10 @@ const profileSchema = new mongoose.Schema(
     placedData: {
       type: Array,
     },
-    sscschoolname: { type: String, required: true },
-    class10th: { type: Number, required: true },
-    hsccollege: { type: String, required: true },
-    class12th: { type: Number, required: true },
-    engcollege: { type: String, required: true },
     branch: { type: String, required: true },
-    engineering_division: { type: String, required: true },
-    engineeringpercent: { type: Number, required: true },
-    engineeringAggrpercent: { type: Number, required: true },
-    liveKt: { type: String, required: true },
+    division: { type: String, required: true },
+    percent: { type: Number, required: true },
+    Aggrpercent: { type: Number, required: true },
   },
   { timestamps: true }
 );

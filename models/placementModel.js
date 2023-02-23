@@ -26,10 +26,6 @@ const placementSchema = new mongoose.Schema(
       type: Date,
       required: true,
     },
-    postedAt: {
-      type: Date,
-      default: Date.now,
-    },
     postedBy: {
       type: String,
       default: "Vaze cell",
