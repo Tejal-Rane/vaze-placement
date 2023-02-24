@@ -47,6 +47,8 @@ const profileSchema = new mongoose.Schema(
     placedData: {
       type: Array,
     },
+    class10th: { type: Number, required: true },
+    class12th: { type: Number, required: true },
     branch: { type: String, required: true },
     division: { type: String, required: true },
     percent: { type: Number, required: true },

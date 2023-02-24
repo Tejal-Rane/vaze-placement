@@ -114,16 +114,7 @@ const CreateProfile = () => {
             <Radio value="female"> Female </Radio>
           </Radio.Group>
         </Form.Item>
-        <Form.Item
-          name="sscschoolname"
-          label="10th School Name"
-          rules={[
-            { required: true, message: "Please input your school name!" },
-          ]}
-          className="col-md-3 col-sm-5 col-10 mx-2"
-        >
-          <Input />
-        </Form.Item>
+        
         <Form.Item
           name="class10th"
           label="10th %"
@@ -131,16 +122,6 @@ const CreateProfile = () => {
           className="col-md-3 col-sm-5 col-10 mx-2"
         >
           <Input type="number" />
-        </Form.Item>
-        <Form.Item
-          name="hsccollege"
-          label="12th college"
-          rules={[
-            { required: true, message: "Please input your 12th college!" },
-          ]}
-          className="col-md-3 col-sm-5 col-10 mx-2"
-        >
-          <Input />
         </Form.Item>
         <Form.Item
           name="class12th"
@@ -151,38 +132,30 @@ const CreateProfile = () => {
           <Input type="number" />
         </Form.Item>
         <Form.Item
-          name="engcollege"
-          label="Engineering College"
-          rules={[{ required: true, message: "Please input your college!" }]}
-          className="col-md-3 col-sm-5 col-10 mx-2"
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
           name="branch"
-          label="Engineering Branch"
+          label="Branch"
           rules={[{ required: true, message: "Please input your branch!" }]}
           className="col-md-3 col-sm-5 col-10 mx-2"
         >
           <Select>
-            <Select.Option value="Computer Engineering">
-              Computer Engineering
+            <Select.Option value="BSC IT">
+              BSC IT
             </Select.Option>
-            <Select.Option value="IT Engineering">IT Engineering</Select.Option>
-            <Select.Option value="Electronics Engineering">
-              Electronics Engineering
+            <Select.Option value="BCOM">BCOM</Select.Option>
+            <Select.Option value="BA">
+              BA
             </Select.Option>
-            <Select.Option value="Electronics & Telecommunication Engineering">
-              Electronics & Telecommunication Engineering
+            <Select.Option value="BSC BT">
+              BSC BT
             </Select.Option>
-            <Select.Option value="Bio-Medical Engineering">
-              Bio-Medical Engineering
+            <Select.Option value="BAF">
+              BAF
             </Select.Option>
           </Select>
         </Form.Item>
         <Form.Item
-          name="engineering_division"
-          label="Engineering Division"
+          name="division"
+          label="Division"
           rules={[{ required: true, message: "Please input your division!" }]}
           className="col-md-3 col-sm-5 col-10 mx-2"
         >
@@ -192,16 +165,16 @@ const CreateProfile = () => {
           </Select>
         </Form.Item>
         <Form.Item
-          name="engineeringpercent"
-          label="Engineering %"
+          name="percent"
+          label="Overall %"
           rules={[{ required: true, message: "Please input your %!" }]}
           className="col-md-3 col-sm-5 col-10 mx-2"
         >
           <Input type="number" />
         </Form.Item>
         <Form.Item
-          name="engineeringAggrpercent"
-          label="Engineering Aggregate CGPA"
+          name="Aggrpercent"
+          label="Aggregate CGPA"
           rules={[{ required: true, message: "Please input your cgpa!" }]}
           className="col-md-3 col-sm-5 col-10 mx-2"
         >

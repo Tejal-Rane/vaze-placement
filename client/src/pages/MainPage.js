@@ -2,6 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
  import "../styles/mainpage.css";
  import web from "./bg_bggenerator_com.jpg"
+ import RecruitersLogos from "../components/RecruitersLogo";
+ import Footer from "../components/Footer";
+
 
 
 const Home = () => {
@@ -45,6 +48,9 @@ const Home = () => {
       </h2></div>
       
       </div>
+      <RecruitersLogos />
+      <Footer />
+
     </>
   )
 }

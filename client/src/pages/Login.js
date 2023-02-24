@@ -41,13 +41,13 @@ const Login = () => {
       style={{
         maxWidth: "360px",
         margin: "150px auto",
-        boxShadow: "1px 2px 10px aqua",
+        boxShadow: "1px 2px 15px grey",
         padding: "20px 10px",
       }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-      <h4>Login</h4>
+      <h4 className="text-center">LOGIN</h4>
       <Form.Item
         name="email"
         rules={[{ required: true, message: "Please input your email!" }]}

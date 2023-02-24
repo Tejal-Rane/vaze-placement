@@ -32,13 +32,13 @@ const AddStudent = () => {
       style={{
         maxWidth: "360px",
         margin: "150px auto",
-        boxShadow: "1px 2px 10px aqua",
+        boxShadow: "1px 2px 15px grey",
         padding: "20px 10px",
       }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-      <h4>Add Student</h4>
+      <h4 className="text-center">ADD STUDENT</h4>
       <Form.Item
         name="name"
         rules={[{ required: true, message: "Please input your name!" }]}
@@ -76,9 +76,9 @@ const AddStudent = () => {
         />
       </Form.Item>
 
-      <Button variant="contained" color="primary" type="submit">
+      <center><Button variant="contained" color="primary" type="submit">
         Add Student
-      </Button>
+      </Button></center>
     </Form>
   );
 };

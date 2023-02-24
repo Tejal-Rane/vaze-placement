@@ -16,56 +16,25 @@ const Footer = () => {
               style={{ border: "none", boxShadow: "none" }}
             >
               <CardContent>
-                <Typography>Vidyalankar Institute of Technology</Typography>
+                <Typography>KET'S V.G. VAZE COLLEGE</Typography>
                 <Typography>
-                  <a href="#">Visit Us</a>
+                  <a href="https://vazecollege.net/">Visit Us</a>
                 </Typography>
                 <Typography>
-                  <a href="#">Contact Us</a>
-                </Typography>
-                <Typography>
-                  <a href="#">Emergency Contact</a>
-                </Typography>
-                <Typography>
-                  <a href="#">Public Information</a>
+                  <a href="Contact">Contact Us</a>
                 </Typography>
               </CardContent>
             </Card>
 
+      
             <Card
               className="footer-card"
               style={{ border: "none", boxShadow: "none" }}
             >
               <CardContent>
-                <Typography>Our facilities</Typography>
-                <Typography>Libraries</Typography>
-                <Typography>Conferences</Typography>
-                <Typography>IT support</Typography>
-                <Typography>Sports</Typography>
-              </CardContent>
-            </Card>
-
-            <Card
-              className="footer-card"
-              style={{ border: "none", boxShadow: "none" }}
-            >
-              <CardContent>
+               
                 <Typography>
-                  Capt.Sachin Sawant:
-                  <br />
-                  <a href="mailto:sachin.sawant1@vit.edu.in">
-                    sachin.sawant1@vit.edu.in
-                  </a>
-                </Typography>
-                <Typography>
-                  Sameer Engineer:
-                  <br />
-                  <a href="mailto:sameer.engineer@vit.edu.in">
-                    sachin.sawant1@vit.edu.in
-                  </a>
-                </Typography>
-                <Typography>
-                  <strong>Office Timings</strong>: 9.00am to 6.00pm
+                  <strong>Office Timings</strong>: 10.00am to 2.00pm
                 </Typography>
                 <Typography>
                   <strong>Telephone Extension</strong>: 1801
@@ -82,15 +51,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-downSide">
-          <div className="col-md-3 ">
-            <img
-              className="footer-logo"
-              src="https://vit.edu.in/images/logo_vit2.png"
-            />
-          </div>
-        </div>
-
+       
         <div className="footer-bottom">
           <hr
             style={{
@@ -102,9 +63,6 @@ const Footer = () => {
               margin: "auto",
             }}
           />
-          <Typography className="footer-bottom-typo">
-            Copyright Vit. Registered no. ####
-          </Typography>
         </div>
       </footer>
     </>
