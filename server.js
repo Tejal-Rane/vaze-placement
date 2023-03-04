@@ -13,12 +13,14 @@ import forumRoutes from "./routes/forumRoute.js";
 //configure env
 dotenv.config();
 
-//databse config
-connectDB();
 
 //rest object
 const app = express();
+app.use(express.static(path.join(__dirname, "./client/build")));
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 //middelwares
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
@@ -56,10 +58,11 @@ app.get("/", (req, res) => {
   res.send("<h1>Welcome to ecommerce app</h1>");
 });
 
-//PORT
-const PORT = process.env.PORT || 8080;
 
-//run listen
-app.listen(PORT, () => {
-  console.log(`Server Running on development mode on port ${PORT}`);
+const port = process.env.PORT || 8080;
+//listen port
+connectDB().then(() => {
+  app.listen(port, () => {
+    console.log(`Server Running in on port ${port}`);
+  });
 });
