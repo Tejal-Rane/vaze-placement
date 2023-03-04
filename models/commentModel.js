@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const comentSchema = new mongoose.Schema({
   question: {
@@ -23,4 +23,4 @@ const comentSchema = new mongoose.Schema({
   ],
 });
 
-export default mongoose.model("chat-forum", comentSchema);
+module.exports=mongoose.model("chat-forum", comentSchema);

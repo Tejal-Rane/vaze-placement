@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const profileSchema = new mongoose.Schema(
   {
@@ -31,6 +31,7 @@ const profileSchema = new mongoose.Schema(
     phone: {
       type: Number,
       required: true,
+      
     },
     address: {
       type: String,
@@ -57,4 +58,4 @@ const profileSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("profile-details", profileSchema);
+module.exports=mongoose.model("profile-details", profileSchema);

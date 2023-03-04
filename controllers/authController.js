@@ -1,8 +1,8 @@
-import userModel from "../models/userModel.js";
-import { comparePassword, hashPassword } from "./../helpers/authHelper.js";
-import JWT from "jsonwebtoken";
+const userModel =require("../models/userModel.js");
+const { comparePassword, hashPassword } =require("./../helpers/authHelper.js");
+const JWT =require("jsonwebtoken");
 
-export const registerController = async (req, res) => {
+const registerController = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     //validations
@@ -41,7 +41,7 @@ export const registerController = async (req, res) => {
   }
 };
 
-export const loginController = async (req, res) => {
+const loginController = async (req, res) => {
   try {
     const { email, password } = req.body;
     //validation
@@ -92,3 +92,4 @@ export const loginController = async (req, res) => {
     });
   }
 };
+module.exports={registerController,loginController}

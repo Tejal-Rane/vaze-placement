@@ -1,5 +1,5 @@
-import express from "express";
-import {
+const express=require("express");
+const {
   addNotice,
   addStudents,
   addPlacement,
@@ -7,7 +7,7 @@ import {
   addPlacedStudent,
   getAllPlaced,
   sendMailNotification,
-} from "../controllers/adminControllers.js";
+}=require("../controllers/adminControllers.js");
 
 //router object
 const router = express.Router();
@@ -19,4 +19,4 @@ router.get("/get-allstudents", allstudents);
 router.post("/add-placed-students", addPlacedStudent);
 router.get("/get-all-placed", getAllPlaced);
 router.post("/send-email-notification", sendMailNotification);
-export default router;
+module.exports=router

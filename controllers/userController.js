@@ -1,6 +1,6 @@
-import profileModel from "../models/profileModel.js";
-import placementModel from "../models/placementModel.js";
-export const createProfileCtrl = async (req, res) => {
+const profileModel =require("../models/profileModel.js");
+const placementModel =require("../models/placementModel.js");
+const createProfileCtrl = async (req, res) => {
   try {
     const profile = new profileModel(req.body);
     await profile.save();
@@ -13,7 +13,7 @@ export const createProfileCtrl = async (req, res) => {
     });
   }
 };
-export const getDrive=async(req,res)=>{
+const getDrive=async(req,res)=>{
 try{
   const drive=await placementModel.find({_id:req.params.id})
   res.status(200).json(drive)
@@ -22,7 +22,7 @@ res.status(501).send(error)
 }
 };
 
-export const getAllDrives = async (req, res) => {
+const getAllDrives = async (req, res) => {
   try {
     const alldrives = await placementModel.find({});
     res.status(200).json(alldrives);
@@ -31,7 +31,7 @@ export const getAllDrives = async (req, res) => {
   }
 };
 
-export const getallplacedcompanies = async (req, res) => {
+const getallplacedcompanies = async (req, res) => {
   try {
     const allcompanies = await profileModel.find(
       { userId: req.params.id },
@@ -43,7 +43,7 @@ export const getallplacedcompanies = async (req, res) => {
   }
 };
 
-export const getProfile = async (req, res) => {
+const getProfile = async (req, res) => {
   try {
     const getprofile = await profileModel.find({ userId: req.params.id });
     res.status(200).json(getprofile);
@@ -51,3 +51,4 @@ export const getProfile = async (req, res) => {
     res.status(501).json({ message: "failed to fetch placed data" });
   }
 };
+module.exports={createProfileCtrl,getDrive,getAllDrives,getallplacedcompanies,getProfile}

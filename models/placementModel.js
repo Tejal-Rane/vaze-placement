@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const placementSchema = new mongoose.Schema(
   {
@@ -14,7 +14,7 @@ const placementSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
-    engAggrrpercentCriteria: {
+    AggrrpercentCriteria: {
       type: Number,
       default: NaN,
     },
@@ -34,4 +34,4 @@ const placementSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("placement", placementSchema);
+module.exports=mongoose.model("placement", placementSchema);

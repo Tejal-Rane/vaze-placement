@@ -1,11 +1,11 @@
-import userModel from "../models/userModel.js";
-import noticeModel from "../models/noticeModel.js";
-import { comparePassword, hashPassword } from "./../helpers/authHelper.js";
-import placementModel from "../models/placementModel.js";
-import profileModel from "../models/profileModel.js";
-import allPlacementModel from "../models/allPlacementModel.js";
-import { transporter } from "../server.js";
-export const sendMailNotification = async (req, res) => {
+const userModel =require("../models/userModel.js");
+const noticeModel =require("../models/noticeModel.js");
+const { comparePassword, hashPassword } =require("./../helpers/authHelper.js");
+const placementModel =require("../models/placementModel.js");
+const profileModel =require("../models/profileModel.js");
+const allPlacementModel =require("../models/allPlacementModel.js");
+const  transporter  =require("../server.js");
+const sendMailNotification = async (req, res) => {
   var mailOptions = {
     from: process.env.MAIL_USERNAME,
     to: req.body.emailarray,
@@ -17,7 +17,7 @@ export const sendMailNotification = async (req, res) => {
     },
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
+ transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
       res.status(500).send(error);
@@ -28,7 +28,7 @@ export const sendMailNotification = async (req, res) => {
   });
 };
 
-export const addStudents = async (req, res) => {
+const addStudents = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     //validations
@@ -66,7 +66,7 @@ export const addStudents = async (req, res) => {
   }
 };
 
-export const addNotice = async (req, res) => {
+const addNotice = async (req, res) => {
   try {
     const notice = new noticeModel(req.body);
     await notice.save();
@@ -79,7 +79,7 @@ export const addNotice = async (req, res) => {
   }
 };
 
-export const addPlacement = async (req, res) => {
+const addPlacement = async (req, res) => {
   try {
     const notice = new placementModel(req.body);
     await notice.save();
@@ -93,7 +93,7 @@ export const addPlacement = async (req, res) => {
   }
 };
 
-export const allstudents = async (req, res) => {
+const allstudents = async (req, res) => {
   try {
     const allstudents = await profileModel.find({});
     const allCompanies = await placementModel.find({});
@@ -107,7 +107,7 @@ export const allstudents = async (req, res) => {
   }
 };
 
-export const addPlacedStudent = async (req, res) => {
+const addPlacedStudent = async (req, res) => {
   try {
     allPlacementModel.insertMany(req.body, (err, resp) => {
       res.status(200).send({ message: "placed students added successfully" });
@@ -122,7 +122,7 @@ export const addPlacedStudent = async (req, res) => {
   }
 };
 
-export const getAllPlaced = async (req, res) => {
+const getAllPlaced = async (req, res) => {
   try {
     const allplaced = await allPlacementModel.find({});
     const aggrcount = await allPlacementModel.aggregate([
@@ -142,3 +142,4 @@ export const getAllPlaced = async (req, res) => {
     });
   }
 };
+module.exports={sendMailNotification, addStudents,getAllPlaced,addPlacedStudent,allstudents,addPlacement,addNotice}

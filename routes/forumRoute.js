@@ -1,6 +1,6 @@
-import express from "express";
+const express = require("express");
 const router = express.Router();
-import commentModel from "../models/commentModel.js";
+const commentModel = require("../models/commentModel.js");
 router.post("/add-query", async (req, res) => {
   try {
     const query = await commentModel(req.body);
@@ -53,4 +53,4 @@ router.get("/get-all-replies/:id", async (req, res) => {
     res.status(501).json({ message: "failed to fetch replies", error });
   }
 });
-export default router;
+module.exports=router

@@ -1,10 +1,10 @@
-import express from "express";
-import {
+const express = require("express");
+const {
   loginController,
   registerController,
-} from "../controllers/authController.js";
+} = require("../controllers/authController.js");
 
-import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
+const { isAdmin, requireSignIn } =require("../middlewares/authMiddleware.js");
 
 //router object
 const router = express.Router();
@@ -25,4 +25,4 @@ router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {
   res.status(200).send({ success: true });
 });
 
-export default router;
+module.exports=router

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const allPlacedStudentSchema = new mongoose.Schema({
   company: {
@@ -19,4 +19,5 @@ const allPlacedStudentSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model("placed-student", allPlacedStudentSchema);
+
+module.exports=mongoose.model("placed-student", allPlacedStudentSchema);
